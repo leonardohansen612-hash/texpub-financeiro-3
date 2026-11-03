@@ -1,0 +1,10 @@
+TEX PUB FINANCEIRO 3.2
+
+1. No sistema online, exporte o backup JSON antes de atualizar.
+2. Substitua SOMENTE index.html no repositório GitHub. Não altere config.js, cloud.js ou Supabase.
+3. Aguarde o deploy da Vercel e atualize a página.
+4. Abra outubro/2026: as referências são vendas 67.235,84, entradas 61.008,41 e saídas 67.772,57.
+5. O dashboard mostrará divergências sem alterar lançamentos.
+6. Resultado gerencial ainda não está calculado: depende de dados por competência e CMV.
+7. A referência histórica é inicializada em memória e será salva na nuvem na próxima alteração; pode ser editada no dashboard.
+8. Se houver edição simultânea em duas abas, o modelo de salvamento de workspace inteiro ainda pode gerar conflito.
