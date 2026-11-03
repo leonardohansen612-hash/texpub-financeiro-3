@@ -1,0 +1,15 @@
+TEX PUB FINANCEIRO 3.0 — PRIMEIRO PROTÓTIPO
+
+1. Abra index.html no Chrome, Edge ou Firefox.
+2. Use o menu lateral para consultar dashboard, lançamentos, fluxo e cadastros.
+3. Clique em '+ Novo lançamento' para registrar entradas e saídas.
+4. As alterações ficam salvas somente neste navegador (localStorage).
+5. Em 'Dados e backup', exporte regularmente um backup JSON.
+
+IMPORTANTE:
+- Protótipo local, sem servidor, login, banco de dados central ou sincronização entre aparelhos.
+- Dados iniciais vieram de DESPESAS e do consolidado de entradas do FLUXO DE CAIXA DIARIO da planilha enviada.
+- A planilha contém várias visões do mesmo dinheiro. Para evitar duplicidade, não somamos as vendas detalhadas e o consolidado de entradas.
+- O saldo do fluxo é uma estimativa derivada da base parcial e não é conciliação bancária.
+- O histórico original e o Excel enviado permanecem intactos.
+- Antes de colocar em produção: migrar para Postgres, autenticação, trilha de auditoria, conciliação bancária, regras de competência e DRE/CMV.
