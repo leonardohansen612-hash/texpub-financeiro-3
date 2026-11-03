@@ -1,15 +1,21 @@
-TEX PUB FINANCEIRO 3.0 — PRIMEIRO PROTÓTIPO
+TEX PUB FINANCEIRO 3.1 — INSTRUÇÕES
 
-1. Abra index.html no Chrome, Edge ou Firefox.
-2. Use o menu lateral para consultar dashboard, lançamentos, fluxo e cadastros.
-3. Clique em '+ Novo lançamento' para registrar entradas e saídas.
-4. As alterações ficam salvas somente neste navegador (localStorage).
-5. Em 'Dados e backup', exporte regularmente um backup JSON.
+1. No Supabase: SQL Editor > cole e execute supabase_schema.sql.
+2. Authentication > Providers > Email: desative cadastro público (Allow new users to sign up).
+3. Authentication > Users > Add user: crie o usuário administrador com e-mail e senha fortes.
+4. Project Settings > API: copie Project URL e chave pública anon/publishable para config.js.
+   NUNCA use service_role/secret.
+5. No GitHub: substitua index.html e adicione config.js e cloud.js na raiz do repositório.
+   NÃO envie backup_inicial_privado.json ao GitHub. NÃO envie planilhas ou extratos.
+6. Aguarde Vercel atualizar. Acesse o site e entre com o usuário criado.
+7. Em Dados e backup > Restaurar backup, selecione backup_inicial_privado.json no seu computador.
+   IMPORTANTE: faça isso apenas uma vez, pois substitui o conteúdo atual do banco.
+8. Confira os totais e teste um lançamento de R$ 1, depois apague-o.
 
-IMPORTANTE:
-- Protótipo local, sem servidor, login, banco de dados central ou sincronização entre aparelhos.
-- Dados iniciais vieram de DESPESAS e do consolidado de entradas do FLUXO DE CAIXA DIARIO da planilha enviada.
-- A planilha contém várias visões do mesmo dinheiro. Para evitar duplicidade, não somamos as vendas detalhadas e o consolidado de entradas.
-- O saldo do fluxo é uma estimativa derivada da base parcial e não é conciliação bancária.
-- O histórico original e o Excel enviado permanecem intactos.
-- Antes de colocar em produção: migrar para Postgres, autenticação, trilha de auditoria, conciliação bancária, regras de competência e DRE/CMV.
+LIMITAÇÕES DESTA PRIMEIRA INTEGRAÇÃO
+- Os dados são armazenados em um documento JSON por usuário (não há compartilhamento entre contas).
+- Edições simultâneas em abas/dispositivos podem sobrescrever alterações (última gravação vence).
+- Sem conciliação bancária automática, trilha de auditoria ou DRE revisado.
+- Não use como única fonte contábil/financeira até conciliar a migração.
+- A chave pública pode estar no frontend; a proteção real vem de login + políticas RLS.
+- Faça backups frequentes. Para operação multiusuário, próxima versão deve normalizar tabelas e usar operações transacionais.
