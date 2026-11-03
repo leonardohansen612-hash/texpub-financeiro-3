@@ -1,5 +1,5 @@
 (async function(){
- const state=document.getElementById('cloudstate'),error=document.getElementById('autherror');
+const url=window.TEX_SUPABASE_URL,anon=window.TEX_SUPABASE_ANON_KEY;
  const url=window.TEXPUB_SUPABASE_URL,anon=window.TEXPUB_SUPABASE_ANON_KEY;
  if(!url||!anon||url.startsWith('COLE_')||anon.startsWith('COLE_')){error.textContent='Configure config.js com URL e chave pública do Supabase.';return;}
  if(!window.supabase){error.textContent='Não foi possível carregar a biblioteca do Supabase.';return;}
