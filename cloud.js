@@ -89,6 +89,7 @@
       db = result.data?.payload || structuredClone(initial);
 
       showDashboard();
+      if (typeof window.loadTransfers === 'function') await window.loadTransfers(client, user.id);
 
       if (error) error.textContent = '';
 
@@ -202,6 +203,7 @@
         }
 
         user = null;
+        if (typeof window.clearTransfers === 'function') window.clearTransfers();
         db = structuredClone(initial);
         showLogin();
 
